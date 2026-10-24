@@ -1,10 +1,34 @@
 {
-  "name": "votex",
-  "ticker": "VOTE",
-  "category": "DAO_Governance",
+  "name": "parliament-ai-mcp",
+  "version": "1.0.0",
+  "description": "Parliament AI Model Context Protocol Server for Deliberative Democracy, Legislative Analysis & Anti-Corruption Audits",
   "tools": [
-    { "name": "query_conway_state", "description": "Fetches current cellular automaton lattice" },
-    { "name": "execute_x402_settlement", "description": "Executes HTTP 402 micro-settlement" },
-    { "name": "fetch_quicknode_rpc", "description": "Queries QuickNode multi-chain endpoint" }
+    {
+      "name": "audit_legislative_bill",
+      "description": "Analyze legislative bills and policy drafts for constitutional compliance, minority impact, and lobbying conflicts of interest",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "bill_title": { "type": "string" },
+          "bill_clauses": { "type": "array", "items": { "type": "string" } },
+          "public_interest_impact": { "type": "string" }
+        },
+        "required": ["bill_title", "bill_clauses"]
+      }
+    },
+    {
+      "name": "disburse_civic_grant",
+      "description": "Release micro-escrow grants to participatory citizen assemblies, open-governance watchdogs, and public audit bodies",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "legislative_track": { "type": "string" },
+          "recipient": { "type": "string" },
+          "amount_wei": { "type": "string" },
+          "bill_hash": { "type": "string" }
+        },
+        "required": ["legislative_track", "recipient", "amount_wei"]
+      }
+    }
   ]
 }
